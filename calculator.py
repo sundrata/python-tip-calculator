@@ -1,17 +1,16 @@
-#Asks user how much their meal cost before tip/tax
-amount = raw_input("What's your total before tip/tax?")
+#Asks user how much their meal cost before tip/tax, converts string input to integer so arithmetic may be applied. 
+amount = int(raw_input("What's your total before tip/tax?"))
 
-#Asks users the amount of sales tax applied to their meal
-tax = raw_input("What is the sales tax applied to your meal? (Enter as whole number)")
+#Asks users the amount of sales tax applied to their meal, converts string input to integer so arithmetic may be applied. Multiplies value by .01 because user enters whole number rather than percentage. 
+tax = int(raw_input("What is the sales tax applied to your meal? (Enter as whole number)")) * .01
 
-#Asks user what percent gratuity they would like to apply
-tip = raw_input("What percent tip would you like to apply? (Enter as whole number)")
+#Asks user what percent gratuity they would like to apply, converts string input to integer so arithmetic may be applied. Multiplies value by .01 because user enters whole number rather than percentage.
+tip = int(raw_input("What percent tip would you like to apply? (Enter as whole number)")) * .01
 
-#total is the amount with tax and tip included. We need to change every input into an integer to apply arithmetic. We also need to multiply the tax and tip by 0.01 because users input 
-#these values as whole numbers rather than percentages.git 
-total = int(amount) + (int(amount) * (int(tax) *.01)) + (int(amount) * (int(tip) * .01))
+#Arithmetic calculating the tax and tip amounts, then finds sum of original amount + tax + tip
+total = amount + (amount * tax ) + (amount * tip )
 
-result = "Your suggested total is " + str(total)
+result = "Your suggested total is $" + str(total)
 
 print result 
 
